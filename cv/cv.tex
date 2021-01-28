@@ -1,0 +1,239 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.3, 10 May 2020) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicon fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\cfoot{I hereby consent to my personal data being processed for the purpose of considering my application for the vacancy}
+\pagestyle{fancy}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{VividPurple}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\begin{document}
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\name{Maciej Łagowski}
+\tagline{Java Developer / Computer Science Student}
+
+% \photoR{2.5cm}{cv_photo}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{m_lagowski@o2.pl}
+  \phone{+48 513 691 364}
+%   \mailaddress{Address, Street, 00000 County}
+  \location{Warsaw, PL}\\
+  \homepage{maciejlagowski.github.io}
+  \linkedin{maciejlagowski}
+  \github{maciejlagowski}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+
+
+% \cvsection{About me}
+% \begin{quote}
+    % Death is coming. Eat trash, be free
+% \end{quote}
+
+\cvsection{Experience}
+
+\cvevent{Intern and Junior Java Developer}{ING Poland - Squad Credit Risk Tech}{July 2019 -- Ongoing}{Warsaw, PL}
+\begin{itemize}
+\item \textcolor{black}{Maintenance and development of the credit risk decision engine:}
+\begin{itemize}
+    \item Business analysis of new features
+    \item Analysis and repair of bugs reported by the production environment
+    \item Definition and generation of mass local regression and feature tests
+    \item Development of new features or changes in the engine
+    \item Manual tests of whole credit process on the test environment
+    \item Preparation of documentation of tests and changes made to the engine
+    \item Handle feature stories and test plans in ServiceNow system
+    \item Development of support programs for generating or processing tests
+\end{itemize}
+\item \textcolor{black}{Administration and support of other business applications:}
+\begin{itemize}
+    \item Support users in terms of application permissions
+    \item Report errors to the application owners
+    \item Repair processes of automatic report downloading
+\end{itemize}
+\end{itemize}
+
+\textcolor{black}{Stack:} Java, Git (GitLab), SQL, Agile SCRUM, ServiceNow, IntelliJ IDEA, Eclipse, SQL Developer, Gradle
+
+\cvsection{Projects}
+
+\cvevent{Airfield application - \href{https://github.com/maciejlagowski/airfield-java-springboot}{Backend}, 
+\href{https://github.com/maciejlagowski/airfield-frontend}{Frontend}}
+{Java, Spring Boot, Angular, REST, JWT, Spring Security, JUnit, Mockito}{}{}
+App made for my B.Eng thesis. Any user can check the weather forecast with the support of OpenWeatherMap API, consumed on the backend. 
+The Spring Boot server also supports sending emails for automatic notifications or password resets. 
+The application has scheduling mechanism, which automatically updates the reservation statuses.
+
+\divider
+
+\cvevent{\href{https://github.com/maciejlagowski/GoldBankCreditApp}{GoldBank Credit App}}{Java, JavaFX, Hibernate}{}{}
+JavaFX desktop application with my own Hibernate based generic repositories.
+Application allows you to create client with incomes and simulate simplified credit process with risk calculation.
+
+\divider
+
+% TODO ogarnąć repozytorium
+\cvevent{\href{https://github.com/maciejlagowski/jfkl2}{Java Reflection App}}{Java}{}{}
+By using the reflection mechanism, the program allows you to read, add and edit 
+packages, classes, methods and fields from compiled jar files. 
+You can also add parts of code to the beginning or end of the specified method. 
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Education}
+
+
+\cvevent{M.Eng.\ in Computer Science}{Military University of Technology in Warsaw}{Expected gradutaion June 2022}{}
+
+\divider
+
+\cvevent{B.Eng.\ in Computer Science}{Military University of Technology in Warsaw}{Graduated Feb 2021 \faMicrochip Specialty: \textbf{IT Systems}}{}{
+    \textcolor{black}{Thesis:} Design and implementation of a software application to support the functioning a sports airport}
+
+\divider
+
+\cvevent{IT Technician}{ZSZ nr 1 in Biała Podlaska}{Graduated April 2021}{}{
+    \textcolor{black}{Qualifications:} \textbf{E.12.}, \textbf{E.13.}, 
+    \textbf{E.14.} (Creation of web applications and databases and administration of databases)}
+
+\cvsection{Skills}
+\textbf{Main:}
+\cvtag{Java}
+\cvtag{Spring Boot}
+\cvtag{SQL}\\
+\cvtag{REST API}
+\cvtag{Git}
+
+\divider\smallskip
+
+\textbf{Other:}
+\cvtag{Linux Bash}
+\cvtag{SCRUM}
+\cvtag{UML}
+\cvtag{Angular CLI}
+\cvtag{C/C++}
+\cvtag{HTML/CSS}
+\cvtag{PHP}
+\cvtag{JavaFX}
+\cvtag{Assembly}
+
+\divider\smallskip
+
+\textbf{Tools:}
+\cvtag{JUnit}
+\cvtag{Mockito}
+\cvtag{Maven}
+\cvtag{IntelliJ}
+\cvtag{Linux}
+\cvtag{ServiceNow}
+\cvtag{VSCode}
+\cvtag{Lombok}\\
+\cvtag{DataGrip}
+\cvtag{MySQL}
+\cvtag{Gradle}
+\cvtag{Eclipse}
+
+\cvsection{Awards}
+
+\cvachievement{\faTrophy}{Twice 1st place in the PSW University in Biała Podl. Programming Contest}{C++, 2016 \& 2017}
+
+\divider
+
+\cvachievement{\faAward}{Rector's scholarship for the best students of the university}{2018, 2019, 2020}
+
+\divider
+
+\cvachievement{\faClipboardCheck}{Knowledge of Credit Risk Certificate}{ING, Dec 2020}
+
+\cvsection{Languages}
+English — B2\\
+Polish — Native\\
+Russian — Basic
+
+
+\cvsection{Hobby}
+IT, New Technologies, Billiards, FPV Drones, Motorization, Motorcycle Sports
+
+\end{paracol}
+\end{document}
